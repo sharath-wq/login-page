@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+    <style>
+        /* Add custom CSS styles here */
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+    <body>
+        <section class="vh-100" style="background-color: #508bfc">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card shadow-2-strong" style="border-radius: 1rem">
+                            <div class="card-body p-5 text-center">
+                                <h3 class="mb-5">Sign in</h3>
+
+                                <form id="loginForm" action="" method="post">
+                                    <div class="form-outline mb-4">
+                                        <input
+                                            type="email"
+                                            id="emailValidation"
+                                            class="form-control form-control-lg"
+                                            name="email"
+                                            required
+                                        />
+                                        <label class="form-label" for="emailValidation">Email</label>
+                                    </div>
+                                    <p class="error-message" id="emailError"></p>
+
+                                    <div class="form-outline mb-4">
+                                        <input
+                                            type="password"
+                                            id="passwordValidation"
+                                            class="form-control form-control-lg"
+                                            name="password"
+                                            required
+                                        />
+                                        <label class="form-label" for="passwordValidation">Password</label>
+                                    </div>
+                                    <% if (message) { %>
+                                    <p class="error-message" id="passwordError"><%= message %></p>
+                                    <% } else { %>
+                                    <p class="error-message" id="passwordError"></p>
+                                    <% } %>
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Form Validations -->
+        <script src="validate.js"></script>
+
+        <!-- MDB -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+    </body>
+</html>
